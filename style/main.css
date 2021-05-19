@@ -1,0 +1,10 @@
+:root {
+    
+}
+
+#main-content {
+    position: absolute;
+    font-family: "Times New Roman", Times, serif;
+    display: flex;
+    flex-wrap: wrap;
+}
