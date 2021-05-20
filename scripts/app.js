@@ -1,38 +1,51 @@
 const database = firebase.firestore();
 
-const shortcuts = document.querySelector('#shortcuts-section')
+const links = document.querySelector('#links')
 
 var categories = []
 
 function rendershortcut(doc) {
 
-    category = doc.data().category
-
-    if (!categories.includes(category)){
-        categories.push(category)
-    }
-
-    let div = document.createElement('div')
-
-    div.setAttribute('id', category)
-    div.textContent = category
-    
-    let li = document.createElement('li')
+    let linkDiv = document.createElement('div')
     let link = document.createElement('a')
     
-    
+    linkDiv.setAttribute('class', "link-div")
     link.setAttribute('href', doc.data().url)
     link.textContent = doc.data().name
 
-    li.appendChild(link)
-    div.appendChild(li)
+    linkDiv.appendChild(link)
 
-    shortcuts.appendChild(div)
+    category = doc.data().category
+    
+    let div
+    let titleDiv
+    if (!categories.includes(category)){
+        categories.push(category)
+        
+        div = document.createElement('div')
+        titleDiv = document.createElement('div')
+
+        div.setAttribute('class', 'category')
+        div.setAttribute('id', category)
+        
+
+        titleDiv.setAttribute('class', 'title-div')
+        titleDiv.setAttribute('id', 'title-'+category)
+        titleDiv.textContent = category
+    } else {
+        div = document.querySelector('#'+category)
+        titleDiv = document.querySelector('#title-'+category)
+    }
+
+    div.appendChild(titleDiv)
+    div.appendChild(linkDiv)
+
+    links.appendChild(div)
 }
 
 database.collection('shortcuts').get().then((snapshot) => {
     snapshot.docs.forEach(doc => {
-        console.log(rendershortcut(doc))
+        rendershortcut(doc)
     })
     console.log(categories)
 })
