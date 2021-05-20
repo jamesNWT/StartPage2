@@ -111,3 +111,11 @@ window.onload = function(){
         });
     }
 }
+
+function addQuote(input){
+
+    database.collection("quotes").add({
+        quote: input
+    })
+
+}

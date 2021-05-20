@@ -1,16 +1,25 @@
+@font-face
+{
+    font-family:'ms98';
+    src: url('../content/ms98.ttf');
+}
+
 :root {
-    
+    --color1: rgb(212, 212, 212);
+    --color2: rgb(0, 11, 78);
 }
 
 div {
-    background-color: grey;
-    /* border-width: medium;
-    border-color: white;
-    border-style: ridge; */
+    background-color: var(--color2);
+    color: var(--color1);
 }
 
 a {
-    color: black;
+    color: var(--color1);
+}
+a:hover {
+    text-decoration: none;
+    color: rgb(119, 119, 119);
 }
 
 #top-level-container {
@@ -26,26 +35,43 @@ a {
     align-items: center;
 
     background: rgb(2,0,36);
-    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(45,45,157,1) 70%, rgb(0, 137, 165) 100%);
+    background: linear-gradient(0deg, 
+                rgba(2,0,36,1) 0%, 
+                rgba(45,45,157,1) 70%, 
+                rgb(0, 137, 165) 100%);
 }
 
 #main-content {
-    font-family: "Times New Roman", Times, serif;
+    font-family: "ms98";
+    font-size: 8;
     display: flex;
     flex-wrap: wrap;
     height: 50%;
-    width: 50%;
-    border-style: solid;
-    border-color: blue;
+    width: 47%;
+    border-style: ridge;
+    border-color: var(--color1);
+    border-width: thick;
 }
 
 #top-bar {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
     height:5%;
     border-style: solid;
-    border-color: black;
+    border-color: var(--color1);
     border-width: 0px 0px 2px 0px;
     padding-bottom: 5px;
+}
+
+#quote-div {
+    order: 1;
+    padding-left: 3px;
+}
+
+#clock {
+    order: 2;
+    padding-right: 3px;
 }
 
 #links-image-command-line {
@@ -60,7 +86,25 @@ a {
 
 #command-line {
     width: 100%;
-    height: 5%
+    height: 100%;
+    
+    height: 100%;
+    border: 0px;
+    border-radius: 0px;
+    background-color: var(--color1);
+    margin: 0px;
+    padding-left: 3px;
+}
+
+#command-line:focus {
+    outline: none;
+    caret-color: var(--color2);
+    color: var(--color2);
+}
+
+#command-line-box {
+    padding: 0px;
+    background-color: var(--color1);
 }
 #side-image-box {
     height: 100%;
@@ -72,20 +116,21 @@ a {
     width: 100%;
     height: 100%;
 }
+
 #links {
     display: flex;
     flex-direction: column;
     min-height: 95%;
 }
+
 .category {
     display: flex;
     flex: 1;
     flex-wrap: wrap;
-    padding-left: 10px;
     padding-bottom: 5px;
     padding-top: 5px;
     align-content: center;
-    
+    justify-content: center;
 }
 
 .title-div {
@@ -94,8 +139,11 @@ a {
     font-weight: bold;
     height: min-content;
     align-items: baseline;
+    text-align: center;
 }
 .link-div {
     order: 2;
-    padding-right: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-align: center;
 }
