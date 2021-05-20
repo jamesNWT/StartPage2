@@ -41,24 +41,30 @@ a {
 
 #top-bar {
     width: 100%;
-    height: 6%;
+    height:5%;
     border-style: solid;
-    border-color: blue;
-    border-width: 0px 0px 5px 0px;
+    border-color: black;
+    border-width: 0px 0px 2px 0px;
+    padding-bottom: 5px;
 }
 
 #links-image-command-line {
     width: 100%;
-    height: 94%;
+    height: 95%;
     display: flex;
 }
 
 #links-and-command-line {
     flex-grow: 1;
 }
+
+#command-line {
+    width: 100%;
+    height: 5%
+}
 #side-image-box {
     height: 100%;
-    width: 20%;
+    width: 38%;
 }
 
 #side-image {
@@ -66,15 +72,28 @@ a {
     width: 100%;
     height: 100%;
 }
-
+#links {
+    display: flex;
+    flex-direction: column;
+    min-height: 95%;
+}
 .category {
     display: flex;
+    flex: 1;
     flex-wrap: wrap;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    align-content: center;
+    
 }
 
 .title-div {
     width: 100%;
     order: 1;
+    font-weight: bold;
+    height: min-content;
+    align-items: baseline;
 }
 .link-div {
     order: 2;
