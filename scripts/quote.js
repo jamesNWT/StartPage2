@@ -9,9 +9,7 @@ async function quotes(){
 }
 
 function renderQuote(quote) {
-    let div = document.createElement('div')
-    
-    div.setAttribute('id', "quote-div")
+    let div = document.querySelector("#quote")
 
     div.textContent = quote
 
