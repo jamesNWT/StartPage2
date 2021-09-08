@@ -5,13 +5,18 @@
 }
 
 :root {
-    --color1: rgb(212, 212, 212);
-    --color2: rgb(0, 11, 78);
+    --color-border: rgb(212, 212, 212);
+    --color-commandline: var(--color-border);
+    --color-bg: rgba(46,87,143,255);
+
+    --color-text: rgb(0, 0, 0);
+    --color-text-hl: rgb();
+    --color-main-bg: #c1e1ca;
 }
 
 div {
-    background-color: var(--color2);
-    color: var(--color1);
+    background-color: var(--color-main-bg);
+    color: var(--color-text);
 }
 
 a {
@@ -34,11 +39,14 @@ a:hover {
     justify-content: center;
     align-items: center;
 
-    background: rgb(2,0,36);
-    background: linear-gradient(0deg, 
+    /* background-image: url("../content/wavepink.png");
+    background-size: 100% auto;
+    background-position-y: center; */
+    background: var(--color-bg);
+    /* background: linear-gradient(0deg, 
                 rgba(2,0,36,1) 0%, 
                 rgba(45,45,157,1) 70%, 
-                rgb(0, 137, 165) 100%);
+                rgb(0, 137, 165) 100%); */
 }
 
 #main-content {
@@ -49,7 +57,7 @@ a:hover {
     height: 50%;
     width: 47%;
     border-style: ridge;
-    border-color: var(--color1);
+    border-color: var(--color-border);
     border-width: thick;
 }
 
@@ -88,20 +96,20 @@ a:hover {
     height: 100%;
     border: 0px;
     border-radius: 0px;
-    background-color: var(--color1);
+    background-color: var(--color-border);
     margin: 0px;
     padding-left: 3px;
 }
 
 #command-line:focus {
     outline: none;
-    caret-color: var(--color2);
-    color: var(--color2);
+    caret-color: var(--color-text);
+    color: var(--color-text);
 }
 
 #command-line-box {
     padding: 0px;
-    background-color: var(--color1);
+    background-color: var(--color-border);
 }
 #side-image-box {
     height: 100%;
