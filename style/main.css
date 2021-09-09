@@ -103,7 +103,8 @@ a:hover {
 }
 
 #links-and-command-line {
-    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 #command-line {
@@ -129,6 +130,7 @@ a:hover {
     padding: 0px;
     background-color: var(--color-commandline);
 }
+
 #side-image-box {
     height: 100%;
     width: 38%;
@@ -143,7 +145,13 @@ a:hover {
 #links {
     display: flex;
     flex-direction: column;
-    min-height: 94%;
+    flex-grow: 1;
+    justify-content: space-between;
+    height: max-content;
+
+    border-style: ridge;
+    border-color: var(--color-border);
+    border-width: 0px 0px 0px 5px;
 }
 
 .category {
