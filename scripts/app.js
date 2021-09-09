@@ -10,6 +10,7 @@ function rendershortcut(doc) {
     let link = document.createElement('a')
     
     linkDiv.setAttribute('class', "link-div")
+    linkDiv.setAttribute('id', doc.id)
     link.setAttribute('href', doc.data().url)
     link.textContent = doc.data().name
 
@@ -42,10 +43,13 @@ function rendershortcut(doc) {
 
     links.appendChild(div)
 }
-
-database.collection('shortcuts').get().then((snapshot) => {
-    snapshot.docs.forEach(doc => {
+function renderAllShortcuts() {
+    database.collection('shortcuts').get().then((snapshot) => {
+        snapshot.docs.forEach(doc => {
         rendershortcut(doc)
     })
-    console.log(categories)
-})
+        console.log(categories)
+    })
+}
+
+renderAllShortcuts()

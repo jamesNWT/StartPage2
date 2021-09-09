@@ -65,14 +65,17 @@ function command(input){
 async function gotoShortcut(input){
 
     let shortcut_url = ""
-    await database.collection('shortcuts').get().then((snapshot) => {
-        snapshot.docs.forEach(doc => {
+    var links = document.getElementsByClassName("link-div")
+    var searchText = input;
+    var found;
 
-            if (doc.data().name.toLowerCase() == input.toLowerCase()){
-                shortcut_url = doc.data().url;
-            }
-        })
-    })
+    for (var i = 0; i < links.length; i++) {
+        if (links[i].textContent == searchText) {
+            found = links[i];
+            break;
+        }
+    }
+    shortcut_url = found.firstElementChild.href
 
     if (shortcut_url == ""){
         window.alert("shortcut not found");
@@ -96,6 +99,28 @@ function addShortcut(input){
             rendershortcut(doc);
         })
     });
+}
+
+async function removeShortcut(input){
+    
+    var links = document.getElementsByClassName("link-div")
+    var searchText = input;
+    var found;
+
+    for (var i = 0; i < links.length; i++) {
+        if (links[i].textContent == searchText) {
+            found = links[i];
+            break;
+        }
+    }
+    shortcut_id = found.id
+
+    database.collection("shortcuts").doc(shortcut_id).delete().then(() => {
+        console.log("Document successfully deleted!");
+    }).catch((error) => {
+        console.error("Error removing document: ", error);
+    });
+    found.remove();
 }
 
 window.onload = function(){
