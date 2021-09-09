@@ -5,9 +5,10 @@
 }
 
 :root {
-    --color-border: #ad78ba;
-    --color-commandline: #c59dcf;
+    --color-border: #f1adc3;
+    --color-commandline: #fdebf1;
     --color-bg: rgba(46,87,143,255);
+    --color-topbar: #ad78ba;
 
     --color-text: rgb(0, 0, 0);
     --color-text-hl: var(--color-border);
@@ -45,30 +46,43 @@ a:hover {
     background-size: 100% auto;
     background-position-y: -50px;
     /* background: var(--color-bg); */
-    /* background: linear-gradient(0deg, 
-                rgba(2,0,36,1) 0%, 
-                rgba(45,45,157,1) 70%, 
+    /* background: linear-gradient(0deg,
+                rgba(2,0,36,1) 0%,
+                rgba(45,45,157,1) 70%,
                 rgb(0, 137, 165) 100%); */
 }
 
 #main-content {
     font-family: "ms98";
-    font-size: 8;
+    font-size: 16px;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     height: 50%;
-    width: 47%;
+    width: 50%;
     border-style: ridge;
     border-color: var(--color-border);
     border-width: thick;
+    letter-spacing: 3px;
 }
 
-#top-bar {
+.top-bar {
+    font-weight: bold;
+    background-color: var(--color-topbar);
+    font-size: 8;
+    color: white;
+}
+
+#top-bar-container {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height:5%;
-    padding-bottom: 5px;
+    height: min-content;
+    letter-spacing: 3px;
+
+    border-style: ridge;
+    border-width: 0px 0px 5px 0px;
+    border-color: var(--color-border);
 }
 
 #quote {
@@ -83,7 +97,8 @@ a:hover {
 
 #links-image-command-line {
     width: 100%;
-    height: 95%;
+    height: auto;
+    flex-grow: 1;
     display: flex;
 }
 
@@ -93,13 +108,14 @@ a:hover {
 
 #command-line {
     width: 100%;
-    height: 100%;
-    
-    height: 100%;
-    border: 0px;
-    border-radius: 0px;
+
+    border-style: ridge;
+    border-color: var(--color-border);
+    border-width: 0px 0px 5px 5px;
+
     background-color: var(--color-commandline);
-    margin: 0px;
+
+    letter-spacing: 3px;
     padding-left: 3px;
 }
 
@@ -147,6 +163,7 @@ a:hover {
     height: min-content;
     align-items: baseline;
     text-align: center;
+    font-size: large;
 }
 .link-div {
     order: 2;
@@ -178,7 +195,7 @@ a:hover {
     pointer-events: none;
     background-color: transparent;
   }
-  
+
   @keyframes scanAnim {
       0% {
           background-position: 0px 0px;
