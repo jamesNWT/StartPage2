@@ -13,3 +13,7 @@ async function signIn(email, password) {
         console.log(cred.user)
     })
 }
+
+async function signOut() {
+    auth.signOut()
+}
