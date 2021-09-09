@@ -1,4 +1,5 @@
 const database = firebase.firestore();
+const auth = firebase.auth();
 
 const links = document.querySelector('#links')
 
