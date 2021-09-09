@@ -5,13 +5,15 @@
 }
 
 :root {
-    --color-border: rgb(212, 212, 212);
-    --color-commandline: var(--color-border);
+    --color-border: #ad78ba;
+    --color-commandline: #c59dcf;
     --color-bg: rgba(46,87,143,255);
 
     --color-text: rgb(0, 0, 0);
-    --color-text-hl: rgb();
-    --color-main-bg: #c1e1ca;
+    --color-text-hl: var(--color-border);
+    --color-main-bg: #fcdfe8;
+
+    --background-picture: url("../content/arizona.png");
 }
 
 div {
@@ -20,11 +22,11 @@ div {
 }
 
 a {
-    color: var(--color1);
+    color: var(--color-text);
 }
 a:hover {
     text-decoration: none;
-    color: rgb(119, 119, 119);
+    color: var(--color-text-hl);
 }
 
 #top-level-container {
@@ -39,10 +41,10 @@ a:hover {
     justify-content: center;
     align-items: center;
 
-    /* background-image: url("../content/wavepink.png");
+    background-image: var(--background-picture);
     background-size: 100% auto;
-    background-position-y: center; */
-    background: var(--color-bg);
+    /* background-position-y: top; */
+    /* background: var(--color-bg); */
     /* background: linear-gradient(0deg, 
                 rgba(2,0,36,1) 0%, 
                 rgba(45,45,157,1) 70%, 
@@ -96,7 +98,7 @@ a:hover {
     height: 100%;
     border: 0px;
     border-radius: 0px;
-    background-color: var(--color-border);
+    background-color: var(--color-commandline);
     margin: 0px;
     padding-left: 3px;
 }
@@ -109,7 +111,7 @@ a:hover {
 
 #command-line-box {
     padding: 0px;
-    background-color: var(--color-border);
+    background-color: var(--color-commandline);
 }
 #side-image-box {
     height: 100%;
