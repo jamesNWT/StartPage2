@@ -5,7 +5,7 @@ Go to the live website with the link in the about section on the right hand side
 
 A personal and mostly just creatively satisfying project. No, your screen isn't glitching out, that's a CSS scanlines effect. Probably not many would like it but I think its cool.
 
-##Search bar functionality:
+## Search bar functionality:
 -d [words] : searches duckduckgo for words
 -y [words] : searches youtube for words
 -l [words] : google searches the liquipedia site for words
