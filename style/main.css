@@ -27,7 +27,7 @@ a {
 }
 a:hover {
     text-decoration: none;
-    color: var(--color-text-hl);
+    color: #52cbbf;
 }
 
 #top-level-container {
