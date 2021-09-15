@@ -57,7 +57,8 @@ function command(input){
         default:
             temp = input.replaceChars("+", "%2B");
             temp2 = temp.replaceChars("", "%20");
-            input = temp2.replaceChars("#", "%23");
+            temp3 = temp2.replaceChars("#", "%23");
+            input = temp3.replaceChars("&", "%26");
             window.location="https://www.google.ca/search?q=" + input;
     }
 }
@@ -137,6 +138,7 @@ window.onload = function(){
     }
 }
 
+//TODO
 function addQuote(input){
 
     database.collection("quotes").add({
