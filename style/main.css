@@ -5,16 +5,18 @@
 }
 
 :root {
-    --color-border: #f1adc3;
-    --color-commandline: #fdebf1;
+    --color-border: #41596c;
+    --color-commandline: #9ca49e;
     --color-bg: rgba(46,87,143,255);
-    --color-topbar: #ad78ba;
+    --color-topbar: #e08e63;
 
-    --color-text: rgb(0, 0, 0);
+    --color-text: #c7a188;
     --color-text-hl: var(--color-border);
-    --color-main-bg: #fcdfe8;
+    --color-main-bg: #1d242a;
+    --top-text-color: rgb(0,0,0);
 
-    --background-picture: url("../content/arizona-small.png");
+    --background-picture: url("../content/melancholic2_edit.png");
+    --side-picture: url("../content/skyline.gif");
 }
 
 div {
@@ -70,7 +72,7 @@ a:hover {
     font-weight: bold;
     background-color: var(--color-topbar);
     font-size: 8;
-    color: white;
+    color: var(--top-text-color);
 }
 
 #top-bar-container {
@@ -134,13 +136,16 @@ a:hover {
 #side-image-box {
     height: 100%;
     width: 38%;
+    background-image: var(--side-picture);
+    background-size: cover;
+    background-position: 40%;
 }
 
-#side-image {
+/* #side-image {
     object-fit: cover;
     width: 100%;
     height: 100%;
-}
+} */
 
 #links {
     display: flex;
