@@ -13,7 +13,8 @@
     --color-text: #c7a188;
     --color-text-hl: var(--color-border);
     --color-main-bg: #1d242a;
-    --top-text-color: rgb(0,0,0);
+    --top-text-color: rgba(248, 231, 231, 0.973);
+    --commandline-text-color: rgba(248, 231, 231, 0.973);
 
     --background-picture: url("../content/melancholic2_edit.png");
     --side-picture: url("../content/skyline.gif");
@@ -118,6 +119,8 @@ a:hover {
 
     background-color: var(--color-commandline);
 
+    color: var(--commandline-text-color);
+
     letter-spacing: 3px;
     padding-left: 3px;
 }
@@ -125,7 +128,6 @@ a:hover {
 #command-line:focus {
     outline: none;
     caret-color: var(--color-text);
-    color: var(--color-text);
 }
 
 #command-line-box {
