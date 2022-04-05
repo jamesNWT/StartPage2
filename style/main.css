@@ -15,6 +15,7 @@
     --color-main-bg: #fcdfe8;
 
     --background-picture: url("../content/arizona-small.png");
+    --side-picture: url("../content/wavepink.png");
 }
 
 div {
@@ -134,6 +135,9 @@ a:hover {
 #side-image-box {
     height: 100%;
     width: 38%;
+    background-image: var(--side-picture);
+    background-size: cover;
+    background-position: 40%;
 }
 
 #side-image {
