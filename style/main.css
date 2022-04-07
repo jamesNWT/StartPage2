@@ -57,9 +57,9 @@ a:hover {
     font-family: "ms98";
     font-size: 16px;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: column;
-    height: 50%;
+    height: fit-content;
     width: 50%;
     border-style: ridge;
     border-color: var(--color-border);
@@ -133,7 +133,6 @@ a:hover {
 }
 
 #side-image-box {
-    height: 100%;
     width: 38%;
     background-image: var(--side-picture);
     background-size: cover;
