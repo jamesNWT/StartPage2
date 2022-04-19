@@ -60,7 +60,8 @@ a:hover {
     flex-wrap: nowrap;
     flex-direction: column;
     height: fit-content;
-    width: 50%;
+    min-height: 48%;
+    width: 48%;
     border-style: ridge;
     border-color: var(--color-border);
     border-width: thick;
